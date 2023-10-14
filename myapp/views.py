@@ -15,7 +15,7 @@ import unidecode, ast
 # Top-N recomendations order by score
 def get_recommendations(N, scores):
     # load in recipe dataset 
-    df_recipes = pd.read_csv('C:/Users/Dell/OneDrive/Desktop/djpro/recipeRecommendation/myapp/Cleaned_Indian_Food_Dataset.csv')
+    df_recipes = pd.read_csv('Cleaned_Indian_Food_Dataset.csv')
     # order the scores with and filter to get the highest N scores
     top = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:N]
     # create dataframe to load in recommendations 

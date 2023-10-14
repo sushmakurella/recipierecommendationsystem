@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-u4koxsiqyn6cisn$@i@noq71t==wnx)0=l72scxc-x$l3j#r$-
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['fd1.onrender.com']
-
+#ALLOWED_HOSTS = ['fd1.onrender.com','fd1.onrender.com/collect']
+ALLOWED_HOSTS=['*']
 
 # Application definition
 
