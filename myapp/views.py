@@ -56,7 +56,7 @@ def title_parser(title):
     title = unidecode.unidecode(title)
     return title 
 
-def RecSys(ingredients, N=20):
+def RecSys(ingredients, N=5):
     """
     The reccomendation system takes in a list of ingredients and returns a list of top 5 
     recipes based of of cosine similarity. 
