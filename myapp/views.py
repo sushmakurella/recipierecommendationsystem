@@ -133,3 +133,5 @@ def collect(request):
             
 
     return render(request,'show.html',{'res':res})
+def test(request):
+    return render(request,'test.html')
