@@ -134,4 +134,7 @@ def collect(request):
 
     return render(request,'show.html',{'res':res})
 def test(request):
+    j=0
+    for i in range(10000000000000000000000000000000):
+        j+=1
     return render(request,'test.html')
