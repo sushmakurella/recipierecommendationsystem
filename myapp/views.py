@@ -56,7 +56,7 @@ def title_parser(title):
     title = unidecode.unidecode(title)
     return title 
 
-def RecSys(ingredients, N=5):
+def RecSys(ingredients, N=10):
     """
     The reccomendation system takes in a list of ingredients and returns a list of top 5 
     recipes based of of cosine similarity. 
@@ -66,19 +66,19 @@ def RecSys(ingredients, N=5):
     """
 
     # load in tdidf model and encodings 
-    # with open("tfidf_encodings.pkl", 'rb') as f:
-    #     tfidf_encodings = pickle.load(f)
+    with open("tfidf_encodings.pkl", 'rb') as f:
+        tfidf_encodings = pickle.load(f)
 
-    # with open("tfidf.pkl", "rb") as f:
-    #     tfidf = pickle.load(f)
+    with open("tfidf.pkl", "rb") as f:
+        tfidf = pickle.load(f)
     #*******************************************
-    df_recipes = pd.read_csv('Cleaned_Indian_Food_Dataset.csv')
-    # Tfidf needs unicode or string types
-    df_recipes['Cleaned_Ingredients'] =df_recipes.Cleaned_Ingredients.values.astype('U')
-    # TF-IDF feature extractor
-    tfidf = TfidfVectorizer()
-    tfidf.fit(df_recipes['Cleaned_Ingredients'])
-    tfidf_encodings = tfidf.transform(df_recipes['Cleaned_Ingredients'])
+    # df_recipes = pd.read_csv('Cleaned_Indian_Food_Dataset.csv')
+    # # Tfidf needs unicode or string types
+    # df_recipes['Cleaned_Ingredients'] =df_recipes.Cleaned_Ingredients.values.astype('U')
+    # # TF-IDF feature extractor
+    # tfidf = TfidfVectorizer()
+    # tfidf.fit(df_recipes['Cleaned_Ingredients'])
+    # tfidf_encodings = tfidf.transform(df_recipes['Cleaned_Ingredients'])
     #**********************************************************
     ingredients_parsed=ingredients
     # use our pretrained tfidf model to encode our input ingredients
@@ -133,8 +133,8 @@ def collect(request):
             
 
     return render(request,'show.html',{'res':res})
-def test(request):
-    j=0
-    for i in range(10000000000000000000000000000000):
-        j+=1
-    return render(request,'test.html')
+# def test(request):
+#     j=0
+#     for i in range(10000000000000000000000000000000):
+#         j+=1
+#     return render(request,'test.html')

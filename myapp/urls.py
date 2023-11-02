@@ -6,7 +6,7 @@ urlpatterns=[
     # path('',views.index,name='index'),
     path('',views.index,name='index'),
     path('collect',views.collect,name='collect'),
-    path('test',views.test,name='test'),
+    #path('test',views.test,name='test'),
     
     
 ]
